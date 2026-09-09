@@ -218,13 +218,35 @@ section { position: relative; scroll-margin-top: 90px; padding: 110px 0; }
   color: var(--white);
   transition: color .4s var(--ease);
 }
-.navbar__mark { width: 30px; height: 30px; display: inline-flex; }
+.navbar__mark {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--cream);
+  box-shadow: var(--shadow-soft);
+  overflow: hidden;
+}
+.navbar__mark img { width: 100%; height: 100%; object-fit: cover; }
+.navbar__word-group { display: flex; flex-direction: column; line-height: 1.15; }
 .navbar__word {
   font-family: 'Playfair Display', serif;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 600;
   letter-spacing: .01em;
 }
+.navbar__subword {
+  font-size: .62rem;
+  font-weight: 500;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  transition: color .4s var(--ease);
+}
+.navbar.is-scrolled .navbar__subword { color: var(--gold); }
 .navbar__links {
   display: flex;
   gap: 26px;
@@ -431,7 +453,7 @@ section { position: relative; scroll-margin-top: 90px; padding: 110px 0; }
 .about__block h3 { font-size: 1.25rem; margin-bottom: 8px; }
 .about__block p { margin-bottom: 0; }
 .about__verse {
-  margin: 36px 0 0;
+  margin: 36px 0;
   padding: 26px 30px;
   background: var(--blush-light);
   border-left: 3px solid var(--gold);
@@ -450,6 +472,47 @@ section { position: relative; scroll-margin-top: 90px; padding: 110px 0; }
   letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--gold);
+}
+
+.preamble {
+  padding-top: 8px;
+}
+.preamble__title {
+  font-size: 1.05rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--plum-soft);
+  margin-bottom: 18px;
+}
+.preamble p { margin-bottom: 16px; }
+.preamble__litany {
+  margin: 22px 0;
+  padding-left: 22px;
+  border-left: 2px solid var(--blush);
+}
+.preamble__litany p {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--plum-soft);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+.preamble__litany p:last-child { margin-bottom: 0; }
+.preamble__sign {
+  margin: 28px 0 4px;
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--plum);
+  line-height: 1.5;
+}
+.preamble__author {
+  font-size: .82rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0;
 }
 
 /* ========================================================
@@ -865,7 +928,10 @@ section { position: relative; scroll-margin-top: 90px; padding: 110px 0; }
   padding-bottom: 50px;
   border-bottom: 1px solid rgba(255,255,255,.12);
 }
-.site-footer .navbar__word { color: var(--white); font-size: 1.4rem; }
+.site-footer__logo { display: flex; align-items: center; gap: 14px; }
+.site-footer .navbar__mark { width: 48px; height: 48px; }
+.site-footer .navbar__word { color: var(--white); font-size: 1.3rem; }
+.site-footer .navbar__subword { color: var(--gold-light); }
 .site-footer__brand p {
   color: rgba(255,255,255,.65);
   max-width: 420px;
